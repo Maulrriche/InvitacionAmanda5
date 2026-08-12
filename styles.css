@@ -1,0 +1,464 @@
+/* ==========================================
+   RESET
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+
+    background: #000;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+
+/* ==========================================
+   INTRO
+========================================== */
+
+#intro {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100vw;
+    height: 100dvh;
+
+    background: #000;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 9999;
+
+    opacity: 1;
+    visibility: visible;
+
+    transition:
+        opacity 1s ease,
+        visibility 1s ease;
+}
+
+
+/* ==========================================
+   VIDEO
+========================================== */
+
+#introVideo {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    object-position: center;
+
+    display: block;
+
+    background: #000;
+}
+
+
+/* ==========================================
+   BOTÓN
+========================================== */
+
+#startButton {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    padding: 15px 30px;
+
+    border: none;
+    border-radius: 5px;
+
+    background: rgba(255, 255, 255, 0.9);
+
+    color: #000;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    z-index: 10;
+
+    display: block;
+}
+
+
+/* ==========================================
+   CUANDO TERMINA EL VIDEO
+========================================== */
+
+body.intro-finished #intro {
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+}
+
+
+body.intro-finished #mainContent {
+
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+/* ==========================================
+   CONTENIDO
+========================================== */
+
+#mainContent {
+
+    width: 100%;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        opacity 1s ease,
+        visibility 1s ease;
+}
+
+
+/* ==========================================
+   SECCIONES
+========================================== */
+
+.section {
+    width: 100%;
+    height: 100dvh;
+    min-height: 100dvh;
+
+    /* Fondo negro para los espacios laterales */
+    background-color: #000;
+
+    /* La imagen ocupa TODO el alto */
+    background-size: auto 100%;
+
+    /* Centrada horizontal y verticalmente */
+    background-position: center center;
+
+    background-repeat: no-repeat;
+
+    /* Evita problemas de scroll horizontal */
+    overflow: hidden;
+}
+
+/* ==========================================
+   FONDOS
+========================================== */
+
+.section-1 {
+    background-image: url("./fondo1.jpeg") 
+}
+.section-2 {
+    background-image: url("fondo2.png");
+}
+
+.section-3 {
+    background-image: url("fondo3.png");
+}
+
+.section-4 {
+    background-image: url("fondo4.png");
+}
+
+.section-5 {
+    background-image: url("fondo5.png");
+}
+
+/* ==========================================
+   SECCIÓN 6
+========================================== */
+
+.section-6 {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+background-image: url("fondo6.png");
+    padding: 40px 20px;
+}
+
+
+/* CONTENIDO */
+
+.section-6-content {
+    width: 100%;
+    max-width: 500px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 40px;
+}
+
+
+/* ==========================================
+   UBICACIÓN
+========================================== */
+
+.location-container {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 20px;
+
+    text-align: center;
+}
+
+
+.location-text {
+    margin: 0;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    font-size: 1rem;
+    color: #000;
+    -webkit-text-stroke: 0.1px #fff;
+    line-height: 1.4;
+}
+
+
+.location-button {
+    display: inline-flex;
+
+    justify-content: center;
+    align-items: center;
+
+    min-height: 50px;
+
+    padding: 14px 28px;
+
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    background: #000;
+    color: #fff;
+
+    font-size: 1rem;
+    font-weight: 600;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+
+.location-button:hover {
+    transform: scale(1.03);
+
+    opacity: 0.85;
+}
+
+
+/* ==========================================
+   CONFIRMACIÓN
+========================================== */
+
+.confirmation-container {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+}
+
+
+.confirmation-button {
+    display: inline-flex;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    justify-content: center;
+    align-items: center;
+
+    width: 50%;
+
+    min-height: 1rem;
+
+    padding: 1rem 1rem;
+
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    background: #000;
+    color: #fff;
+
+    font-size: 1rem;
+    font-weight: 700;
+
+    text-align: center;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+
+.confirmation-button:hover {
+    transform: scale(1.03);
+
+    opacity: 0.9;
+}
+
+
+/* ==========================================
+   TABLET / DESKTOP
+========================================== */
+
+@media (min-width: 768px) {
+
+    .section-6-content {
+        max-width: 650px;
+    }
+
+    .section-6 {
+        padding: 60px 40px;
+    }
+
+}
+
+
+/* ==========================================
+   SECCIÓN 7 - CUENTA REGRESIVA
+========================================== */
+
+.section-7 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("fondo7.png");
+    padding: 30px 20px;
+}
+
+
+/* CONTENEDOR */
+
+.countdown-container {
+    width: 100%;
+    max-width: 600px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+/* CADA ELEMENTO */
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    min-width: 65px;
+}
+
+
+/* NÚMERO */
+
+.countdown-item span {
+    font-size: clamp(30px, 9vw, 65px);
+
+    font-weight: 700;
+
+    line-height: 1;
+
+    color: #fff;
+
+    -webkit-text-stroke: 1px #000;
+
+    text-shadow:
+        0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+
+/* TEXTO */
+
+.countdown-item small {
+    margin-top: 8px;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    color: #fff;
+
+    -webkit-text-stroke: 0.5px #000;
+
+    text-shadow:
+        0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+
+/* TABLET */
+
+@media (min-width: 768px) {
+
+    .countdown-container {
+        gap: 30px;
+    }
+
+    .countdown-item {
+        min-width: 100px;
+    }
+
+}
+
+
+
+.section-8 {
+    background-image: url("fondo8.png");
+}
+
+
+/* ==========================================
+   TABLET / DESKTOP
+========================================== */
+
+@media (min-width: 768px) {
+
+    .section {
+        min-height: 100vh;
+    }
+
+}
